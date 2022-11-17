@@ -1,59 +1,43 @@
 <template>
   <div class="containter">
-    <Header title="Task Tracker"></Header>
-    <Tasks v-bind:tasks="tasks"></Tasks>
+    <Header v-on:toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask"></Header>
+    <router-view v-bind:showAddTask="showAddTask"></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Tasks from "./components/Tasks.vue"
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    Tasks
+    Footer
   },
   data() {
     return {
-      tasks: []
-    }
+      showAddTask: true,
+    };
   },
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        text: 'Study VueJS',
-        day: 'Wednesday, November 16th, 2022',
-        reminder: true,
-      }, 
-      {
-        id: 2,
-        text: 'Study Unity',
-        day: 'Saturday, November 19th, 2022',
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: 'Study ReactJS',
-        day: 'Friday, November 18th, 2022',
-        reminder: false,
-      }
-    ]
+  methods: {
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask;
+    },
   }
-};
+}
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .container {
   max-width: 500px;

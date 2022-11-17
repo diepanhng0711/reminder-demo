@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "text": "Study VueJS",
+      "day": "Wednesday, November 16th, 2022",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Study Unity",
+      "day": "Saturday, November 19th, 2022",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Study ReactJS",
+      "day": "Friday, November 18th, 2022",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "Study UnrealEngine",
+      "day": "Friday, November 25th, 2022",
+      "reminder": true
+    }
+  ]
+}
